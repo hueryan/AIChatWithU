@@ -1,0 +1,23 @@
+import { fileURLToPath, URL } from 'node:url'
+
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueDevTools from 'vite-plugin-vue-devtools'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    vue(),
+    vueDevTools(),
+  ],
+  build: {
+    // 使用 import.meta.url 来定位当前文件路径，并解析到相对的 Django 目录
+    outDir: fileURLToPath(new URL('../backend/static/frontend', import.meta.url)),
+    emptyOutDir: true,
+  },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    },
+  },
+})
