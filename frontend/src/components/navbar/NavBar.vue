@@ -33,7 +33,7 @@ import ThemeToggle from "@/components/navbar/icons/ThemeToggle.vue";
         </div>
 
         <div class="navbar-end">
-          <RouterLink :to="{name: 'user-account-login-index'}" active-class="btn-active" class="btn btn-ghost text-lg">登录</RouterLink>
+          <RouterLink :to="{name: 'user-account-login-index'}" active-class="btn-active" class="btn btn-ghost text-lg mr-1">登录</RouterLink>
           <ThemeToggle />
         </div>
 
