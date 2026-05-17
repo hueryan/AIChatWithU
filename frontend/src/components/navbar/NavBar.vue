@@ -41,10 +41,10 @@ const user = useUserStore()
             <CreateIcon />
             创作
           </RouterLink>
-          <RouterLink v-if="!user.isLogin()" :to="{name: 'user-account-login-index'}" active-class="btn-active" class="btn btn-ghost text-lg mr-3">
+          <RouterLink v-if="user.hasPulledUserInfo && !user.isLogin()" :to="{name: 'user-account-login-index'}" active-class="btn-active" class="btn btn-ghost text-lg mr-3">
             登录
           </RouterLink>
-          <UserMenu v-else />
+          <UserMenu v-else-if="user.isLogin()" />
           <ThemeToggle class="mr-3" />
         </div>
       </nav>

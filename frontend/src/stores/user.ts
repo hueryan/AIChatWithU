@@ -8,6 +8,7 @@ export const useUserStore = defineStore('user', () => {
     const photo = ref<string>('')
     const profile = ref<string>('')
     const accessToken = ref<string>('')
+    const hasPulledUserInfo = ref(false)
 
     function isLogin(){
         return !!accessToken.value
@@ -32,6 +33,10 @@ export const useUserStore = defineStore('user', () => {
         accessToken.value = ''
     }
 
+    function setHasPulledUserInfo(newStatus: boolean) {
+        hasPulledUserInfo.value = newStatus
+    }
+
     return {
         id,
         username,
@@ -42,6 +47,7 @@ export const useUserStore = defineStore('user', () => {
         setAccessToken,
         setUserInfo,
         logout,
-
+        hasPulledUserInfo,
+        setHasPulledUserInfo,
     }
 })
