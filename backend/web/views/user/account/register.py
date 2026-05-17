@@ -48,6 +48,8 @@ class RegisterView(APIView):
             return response
 
         except:
+            # import traceback
+            # print(traceback.format_exc())  # 在终端打印信息
             return Response({
                 'result': '系统异常，请稍后重试'
             })

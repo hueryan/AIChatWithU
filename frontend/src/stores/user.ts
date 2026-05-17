@@ -3,11 +3,11 @@ import {ref} from "vue";
 import type {UserInfo} from "@/types/user.ts";
 
 export const useUserStore = defineStore('user', () => {
-    const id = ref<number>(1)
-    const username = ref<string>('yqy')
-    const photo = ref<string>('http://127.0.0.1:8000/media/user/photos/default.jpg')
-    const profile = ref<string>('111')
-    const accessToken = ref<string>('111')
+    const id = ref<number>(0)
+    const username = ref<string>('')
+    const photo = ref<string>('')
+    const profile = ref<string>('')
+    const accessToken = ref<string>('')
 
     function isLogin(){
         return !!accessToken.value
